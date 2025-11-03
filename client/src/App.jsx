@@ -19,7 +19,7 @@ const App = () => {
   
 
   return (
-    <div>
+    <div className='min-h-screen bg-bg text-text'>
       <Toaster/>
       <Routes>
         <Route path='/' element={<Home />} />
