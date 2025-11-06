@@ -3,7 +3,8 @@ import axios from "axios";
 import {useNavigate} from 'react-router-dom'
 import toast from 'react-hot-toast';
 
-axios.defaults.baseURL = import.meta.env.VITE_BASE_URL
+// Set base URL for API calls - defaults to localhost for development
+axios.defaults.baseURL = import.meta.env.VITE_BASE_URL || 'http://localhost:3000'
 
 const AppContext = createContext();
 
