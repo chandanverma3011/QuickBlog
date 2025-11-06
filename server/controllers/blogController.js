@@ -16,7 +16,8 @@ export const addBlog = async (req, res)=>{
             return res.json({success: false, message: "Missing required fields"})
         }
 
-        const fileBuffer = fs.readFileSync(imageFile.path)
+        // Use buffer from memory storage (Vercel compatible) or read from disk (local dev)
+        const fileBuffer = imageFile.buffer || fs.readFileSync(imageFile.path)
 
         // Upload Image to ImageKit
         const response = await imagekit.upload({
